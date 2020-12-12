@@ -1,15 +1,14 @@
+name: release
+
 on:
   push:
     branches:
+    - gh-actions-tryin
     - master
     - devel
-  tags:
+    tags:
     - '[0-9]+.[0-9]+.[0-9]+'
     - '[0-9]+.[0-9]+.[0-9]+a[0-9]+'
-  pull_request:
-    branches:
-    - master
-    - devel
 
 release:
     if: startsWith(github.ref, 'refs/tags')
