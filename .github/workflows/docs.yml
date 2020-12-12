@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         # TODO: consider pip cache
         run: |
-          sudo apt install pandoc
-          python3 -m pip install .[docs, jupyter]
+          sudo apt-get install pandoc swig
+          python3 -m pip install ".[docs,jupyter]"
       - name: Build docs
         run: cd docs && make apidoc && make html && touch _build/html/.nojekyll;
       - name: Deploy
